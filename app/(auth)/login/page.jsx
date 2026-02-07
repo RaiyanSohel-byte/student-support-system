@@ -3,6 +3,8 @@ import logo from "../../../public/auth images/logo.png";
 import Image from "next/image";
 import emailIcon from "../../../public/icons/email.png";
 import lockIcon from "../../../public/icons/lock.png";
+import loginIcon from "../../../public/icons/login.png";
+
 import { Montserrat } from "next/font/google";
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -77,8 +79,8 @@ const Login = () => {
           >
             Forgot Password
           </p>
-          <button className="font-bold text-base leading-6 text-white bg-[#5AC7DB]/50 text-center py-2.5 w-full rounded-[10px] mt-4 cursor-pointer hover:scale-105 transition-all">
-            Sign In
+          <button className="font-bold text-base leading-6 text-white bg-[#5AC7DB]/50 text-center py-2.5 w-full rounded-[10px] mt-4 cursor-pointer hover:scale-105 transition-all flex justify-center items-center gap-2">
+            <Image src={loginIcon} width={20} height={20} alt="login" /> Sign In
           </button>
         </form>
         <p className="text-[#6A7282] text-sm leading-5 text-center">
