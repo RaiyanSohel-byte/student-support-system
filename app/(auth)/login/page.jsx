@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "../../../public/auth images/logo.png";
 import Image from "next/image";
+import emailIcon from "../../../public/icons/email.png";
+import lockIcon from "../../../public/icons/lock.png";
 import { Montserrat } from "next/font/google";
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -27,33 +29,47 @@ const Login = () => {
           </p>
         </div>
         {/* Login form */}
-        <form className="rounded-2xl shadow-lg p-8 lg:w-[450px] w-full">
+        <form className="rounded-2xl shadow-xl p-8 lg:w-[450px] w-full">
           <h3 className="text-[#0A0A0A] font-bold text-2xl leading-8 text-center mb-6">
             Sign In
           </h3>
 
           {/* Email */}
-          <div className="space-y-2 mb-4">
+          <div className="space-y-2 mb-4 relative">
             <h3 className="text-[#0A0A0A] font-bold text-sm leading-5">
               Email Address
             </h3>
             <input
               type="email"
               name="email"
-              className="w-full placeholder:text-[#0A0A0A80] placeholder:text-base px-3 py-3.75 border border-[#D1D5DC] rounded-[10px]"
+              className="w-full placeholder:text-[#0A0A0A80] placeholder:text-base px-9 py-3.75 border border-[#D1D5DC] rounded-[10px]"
               placeholder="student@university.edu"
+            />
+            <Image
+              src={emailIcon}
+              alt="Email Icon"
+              width={20}
+              height={20}
+              className="absolute left-3 top-[50%]"
             />
           </div>
           {/* Password */}
-          <div className="space-y-2">
+          <div className="space-y-2 relative">
             <h3 className="text-[#0A0A0A] font-bold text-sm leading-5">
               Password
             </h3>
             <input
               type="email"
               name="email"
-              className="w-full placeholder:text-[#0A0A0A80] placeholder:text-base px-3 py-3.75 border border-[#D1D5DC] rounded-[10px]"
+              className="w-full placeholder:text-[#0A0A0A80] placeholder:text-base px-9 py-3.75 border border-[#D1D5DC] rounded-[10px]"
               placeholder="password"
+            />
+            <Image
+              src={lockIcon}
+              alt="Email Icon"
+              width={20}
+              height={20}
+              className="absolute left-3 top-[50%]"
             />
           </div>
           <p
@@ -66,7 +82,8 @@ const Login = () => {
           </button>
         </form>
         <p className="text-[#6A7282] text-sm leading-5 text-center">
-          © 2025 University Support System. All rights reserved.
+          © {new Date().getFullYear()} University Support System. All rights
+          reserved.
         </p>
       </div>
     </section>
