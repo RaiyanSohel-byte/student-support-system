@@ -1,16 +1,21 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import logo from "../../../public/auth images/logo.png";
 import Image from "next/image";
 import emailIcon from "../../../public/icons/email.png";
 import lockIcon from "../../../public/icons/lock.png";
 import loginIcon from "../../../public/icons/login.png";
+import eyeIcon from "../../../public/icons/eye.png";
+import eyeOnIcon from "../../../public/icons/eyeOn.png";
 
 import { Montserrat } from "next/font/google";
+import EyeOnIcon from "@/app/components/icons/EyeOnIcon";
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
 });
 const Login = () => {
+  const [showPass, setShowPass] = useState(false);
   return (
     <section className="min-h-screen flex justify-center items-center">
       <div className="space-y-8 py-4 lg:py-0">
@@ -61,8 +66,8 @@ const Login = () => {
               Password
             </h3>
             <input
-              type="email"
-              name="email"
+              type={showPass ? "text" : "password"}
+              name="password"
               className="w-full placeholder:text-[#0A0A0A80] placeholder:text-base px-9 py-3.75 border border-[#D1D5DC] rounded-[10px]"
               placeholder="password"
             />
@@ -73,6 +78,22 @@ const Login = () => {
               height={20}
               className="absolute left-3 top-[50%]"
             />
+            {showPass ?
+              <Image
+                onClick={() => setShowPass(false)}
+                src={eyeIcon}
+                alt="Eye Icon"
+                width={20}
+                height={20}
+                className="absolute right-3 top-[50%] cursor-pointer"
+              />
+            : <div
+                onClick={() => setShowPass(true)}
+                className="absolute right-3 top-[50%] cursor-pointer"
+              >
+                <EyeOnIcon />
+              </div>
+            }
           </div>
           <p
             className={`${montserrat.className} text-right text-[#D2000A] text-[18px] mt-1.5 cursor-pointer`}
