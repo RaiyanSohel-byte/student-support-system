@@ -1,6 +1,10 @@
 import { BookOpen, GraduationCap, Activity, Ticket } from "lucide-react";
 import StatCard from "../components/dashboard/StatCard";
 import ScheduleCard from "../components/dashboard/ScheduleCard";
+import clock from "../../public/icons/clock.png";
+import ticket from "../../public/icons/support-ticket.png";
+import progress from "../../public/icons/progress.png";
+import Image from "next/image";
 export default function StudentDashboardPage() {
   return (
     <div className="space-y-8 max-w-[1400px] mx-auto">
@@ -59,12 +63,6 @@ export default function StudentDashboardPage() {
         {/* Schedule - Takes up 2 columns */}
         <div className="lg:col-span-2 space-y-6">
           <section className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
-            <h2 className="text-lg font-bold mb-6 flex items-center gap-2">
-              <span className="p-1.5 bg-blue-50 text-blue-500 rounded-lg">
-                📅
-              </span>{" "}
-              Today's Schedule
-            </h2>
             <div className="space-y-4">
               {/* Map your schedule data here */}
               <ScheduleCard
@@ -89,10 +87,10 @@ export default function StudentDashboardPage() {
           </section>
 
           <section className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
-            <h2 className="text-lg font-bold mb-6 flex items-center gap-2 text-slate-800">
-              <span className="text-green-500 italic">📈</span> Academic
-              Progress
-            </h2>
+            <div className="text-lg font-bold mb-6 flex items-center gap-2 text-slate-800">
+              <Image src={progress} width={24} height={24} alt="progress" />
+              <h3>Academic Progress</h3>
+            </div>
             {/* Progress Items */}
           </section>
         </div>
@@ -100,22 +98,19 @@ export default function StudentDashboardPage() {
         {/* Sidebar Widgets - Takes up 1 column */}
         <div className="space-y-6">
           <section className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 min-h-[400px]">
-            <h2 className="text-lg font-bold mb-6 flex items-center gap-2">
-              <span className="p-1.5 bg-green-50 text-green-500 rounded-lg">
-                🕒
-              </span>{" "}
-              Recent Activity
-            </h2>
+            <div className="text-lg font-bold mb-6 flex items-center gap-2">
+              <Image src={clock} width={24} height={24} alt="clock" />
+
+              <h3>Recent Activity</h3>
+            </div>
             {/* Activity Feed */}
           </section>
 
           <section className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
-            <h2 className="text-lg font-bold mb-6 flex items-center gap-2">
-              <span className="p-1.5 bg-orange-50 text-orange-500 rounded-lg">
-                ⚠️
-              </span>{" "}
-              Support Tickets
-            </h2>
+            <div className="text-lg font-bold mb-6 flex items-center gap-2">
+              <Image src={ticket} width={24} height={24} alt="ticket" />
+              <h3> Support Tickets</h3>
+            </div>
             {/* Ticket items */}
           </section>
         </div>
