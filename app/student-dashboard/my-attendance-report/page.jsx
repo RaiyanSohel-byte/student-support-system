@@ -79,7 +79,7 @@ const COURSE_ATTENDANCE = [
 
 const AttendanceReportPage = () => {
   return (
-    <div className="max-w-7xl mx-auto p-4 md:p-8 space-y-8 text-slate-800">
+    <div className="p-4 md:p-8 space-y-8 text-slate-800">
       <header>
         <h1 className="text-2xl font-bold text-slate-900">
           My Attendance Report

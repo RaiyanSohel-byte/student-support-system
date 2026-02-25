@@ -7,7 +7,7 @@ import progress from "../../public/icons/progress.png";
 import Image from "next/image";
 export default function StudentDashboardPage() {
   return (
-    <div className="space-y-8 max-w-[1400px] mx-auto">
+    <div className="space-y-8 p-4 md:p-8">
       {/* Welcome Header */}
       <header className="flex justify-between items-start bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
         <div>
