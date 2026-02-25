@@ -57,7 +57,7 @@ const KnowledgeBaseDetailPage = () => {
     <div className="p-4 md:p-8 space-y-6 text-slate-800">
       {/* Back Button */}
       <Link
-        href="/student-dashboard/knowledge-base"
+        href="/dashboard/knowledge-base"
         className="flex items-center gap-2 text-slate-500 hover:text-[#4db8d8] transition-colors group mb-4"
       >
         <ArrowLeft

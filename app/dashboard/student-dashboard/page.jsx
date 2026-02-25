@@ -1,10 +1,11 @@
 import { BookOpen, GraduationCap, Activity, Ticket } from "lucide-react";
-import StatCard from "../components/dashboard/StatCard";
-import ScheduleCard from "../components/dashboard/ScheduleCard";
-import clock from "../../public/icons/clock.png";
-import ticket from "../../public/icons/support-ticket.png";
-import progress from "../../public/icons/progress.png";
+
+import clock from "../../../public/icons/clock.png";
+import ticket from "../../../public/icons/support-ticket.png";
+import progress from "../../../public/icons/progress.png";
 import Image from "next/image";
+import StatCard from "@/app/components/dashboard/StatCard";
+import ScheduleCard from "@/app/components/dashboard/ScheduleCard";
 export default function StudentDashboardPage() {
   return (
     <div className="space-y-8 p-4 md:p-8">

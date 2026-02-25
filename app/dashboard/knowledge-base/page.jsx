@@ -114,10 +114,7 @@ const KnowledgeBasePage = () => {
       {/* Article Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredArticles.map((article, idx) => (
-          <Link
-            href={`/student-dashboard/knowledge-base/${article.id} `}
-            key={idx}
-          >
+          <Link href={`/dashboard/knowledge-base/${article.id} `} key={idx}>
             {" "}
             <div className="bg-white rounded-[24px] border border-slate-100 shadow-sm hover:shadow-md transition-all p-6 flex flex-col justify-between group cursor-pointer">
               <div>

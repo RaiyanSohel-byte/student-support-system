@@ -59,7 +59,7 @@ const TicketDetailsPage = () => {
     <div className="p-4 md:p-8 space-y-6 text-slate-800 relative">
       {/* Back Button */}
       <Link
-        href="/student-dashboard/my-tickets"
+        href="/dashboard/my-tickets"
         className="flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors group"
       >
         <ArrowLeft

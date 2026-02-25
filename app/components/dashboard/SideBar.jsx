@@ -10,41 +10,81 @@ import {
   GraduationCap,
   MessageSquare,
   Briefcase,
+  User,
+  Database,
 } from "lucide-react";
 import logo from "../../../public/logo.png";
 import Image from "next/image";
-const NAV_ITEMS = [
-  { name: "Dashboard", icon: LayoutDashboard, href: "/student-dashboard" },
-  { name: "My Tickets", icon: Ticket, href: "/student-dashboard/my-tickets" },
-  {
-    name: "Submit Ticket",
-    icon: Send,
-    href: "/student-dashboard/submit-ticket",
-  },
-  {
-    name: "Knowledge Base",
-    icon: BookOpen,
-    href: "/student-dashboard/knowledge-base",
-  },
-  {
-    name: "My Attendance Report",
-    icon: CalendarCheck,
-    href: "/student-dashboard/my-attendance-report",
-  },
-  { name: "My AOLCC", icon: Briefcase, href: "/student-dashboard/my-alocc" },
-  {
-    name: "My Course Progress",
-    icon: GraduationCap,
-    href: "/student-dashboard/my-course-progress",
-  },
-  {
-    name: "Messages",
-    icon: MessageSquare,
-    href: "/student-dashboard/messages",
-  },
-];
+const NAV_ITEMS = {
+  student: [
+    {
+      name: "Dashboard",
+      icon: LayoutDashboard,
+      href: "/dashboard/student-dashboard",
+    },
+    { name: "My Tickets", icon: Ticket, href: "/dashboard/my-tickets" },
+    {
+      name: "Submit Ticket",
+      icon: Send,
+      href: "/dashboard/submit-ticket",
+    },
+    {
+      name: "Knowledge Base",
+      icon: BookOpen,
+      href: "/dashboard/knowledge-base",
+    },
+    {
+      name: "My Attendance Report",
+      icon: CalendarCheck,
+      href: "/dashboard/my-attendance-report",
+    },
+    { name: "My AOLCC", icon: Briefcase, href: "/dashboard/my-alocc" },
+    {
+      name: "My Course Progress",
+      icon: GraduationCap,
+      href: "/dashboard/my-course-progress",
+    },
+    {
+      name: "Messages",
+      icon: MessageSquare,
+      href: "/dashboard/messages",
+    },
+  ],
 
-export default function Sidebar() {
+  admin: [
+    {
+      name: "Dashboard",
+      icon: LayoutDashboard,
+      href: "/dashboard/admin-dashboard",
+    },
+    { name: "All Tickets", icon: Ticket, href: "/dashboard/all-tickets" },
+    {
+      name: "Knowledge Base",
+      icon: BookOpen,
+      href: "/dashboard/knowledge-base-admin",
+    },
+    {
+      name: "User Management",
+      icon: User,
+      href: "/dashboard/user-management",
+    },
+    {
+      name: "Integrations",
+      icon: Database,
+      href: "/dashboard/integrations",
+    },
+  ],
+
+  superAdmin: [
+    {
+      name: "Messages",
+      icon: MessageSquare,
+      href: "/dashboard/messages",
+    },
+  ],
+};
+
+export default function Sidebar({ role = "admin" }) {
   const pathname = usePathname();
 
   return (
@@ -58,7 +98,7 @@ export default function Sidebar() {
 
       {/* Navigation */}
       <nav className="flex-1 px-3 space-y-1">
-        {NAV_ITEMS.map((item) => {
+        {NAV_ITEMS[role]?.map((item) => {
           const isActive = pathname === item.href;
           return (
             <Link
