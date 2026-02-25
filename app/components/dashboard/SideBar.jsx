@@ -14,14 +14,34 @@ import {
 import logo from "../../../public/logo.png";
 import Image from "next/image";
 const NAV_ITEMS = [
-  { name: "Dashboard", icon: LayoutDashboard, href: "/" },
-  { name: "My Tickets", icon: Ticket, href: "/tickets" },
-  { name: "Submit Ticket", icon: Send, href: "/submit" },
-  { name: "Knowledge Base", icon: BookOpen, href: "/kb" },
-  { name: "My Attendance Report", icon: CalendarCheck, href: "/attendance" },
-  { name: "My AOLCC", icon: Briefcase, href: "/aolcc" },
-  { name: "My Course Progress", icon: GraduationCap, href: "/progress" },
-  { name: "Messages", icon: MessageSquare, href: "/messages" },
+  { name: "Dashboard", icon: LayoutDashboard, href: "/student-dashboard" },
+  { name: "My Tickets", icon: Ticket, href: "/student-dashboard/my-tickets" },
+  {
+    name: "Submit Ticket",
+    icon: Send,
+    href: "/student-dashboard/submit-ticket",
+  },
+  {
+    name: "Knowledge Base",
+    icon: BookOpen,
+    href: "/student-dashboard/knowledge-base",
+  },
+  {
+    name: "My Attendance Report",
+    icon: CalendarCheck,
+    href: "/student-dashboard/my-attendance-report",
+  },
+  { name: "My AOLCC", icon: Briefcase, href: "/student-dashboard/my-alocc" },
+  {
+    name: "My Course Progress",
+    icon: GraduationCap,
+    href: "/student-dashboard/my-course-progress",
+  },
+  {
+    name: "Messages",
+    icon: MessageSquare,
+    href: "/student-dashboard/messages",
+  },
 ];
 
 export default function Sidebar() {
