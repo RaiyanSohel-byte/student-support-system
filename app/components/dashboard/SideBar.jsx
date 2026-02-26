@@ -112,7 +112,7 @@ const NAV_ITEMS = {
     {
       name: "Integrations",
       icon: Database,
-      href: "/dashboard/super-admin-integrations",
+      href: "/dashboard/integrations",
     },
     {
       name: "Reports & Analytics",
