@@ -74,7 +74,13 @@ const NAV_ITEMS = {
       href: "/dashboard/integrations",
     },
   ],
-
+  support: [
+    {
+      name: "Ticket Handling",
+      icon: Ticket,
+      href: "/dashboard/ticket-handling",
+    },
+  ],
   superAdmin: [
     {
       name: "Messages",
@@ -84,7 +90,7 @@ const NAV_ITEMS = {
   ],
 };
 
-export default function Sidebar({ role = "admin" }) {
+export default function Sidebar({ role = "support" }) {
   const pathname = usePathname();
 
   return (

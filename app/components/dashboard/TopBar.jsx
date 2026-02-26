@@ -1,4 +1,5 @@
 import { Bell, LogOut, Menu, User } from "lucide-react";
+import Link from "next/link";
 import { IoIosNotificationsOutline } from "react-icons/io";
 export default function TopBar({ onMenuClick }) {
   // Add prop here
@@ -31,7 +32,10 @@ export default function TopBar({ onMenuClick }) {
         </div>
         {/* Notification Badge */}
         <div className="relative">
-          <IoIosNotificationsOutline size={28} color="#48A548" />{" "}
+          <Link href="/dashboard/notifications">
+            {" "}
+            <IoIosNotificationsOutline size={28} color="#48A548" />
+          </Link>
           <div className="absolute -top-1 left-3 w-5 h-5 bg-orange-500 border-2 border-white rounded-full flex items-center justify-center text-[10px] text-white font-bold">
             1
           </div>
