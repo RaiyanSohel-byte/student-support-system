@@ -12,6 +12,8 @@ import {
   Briefcase,
   User,
   Database,
+  Home,
+  Bookmark,
 } from "lucide-react";
 import logo from "../../../public/logo.png";
 import Image from "next/image";
@@ -83,14 +85,44 @@ const NAV_ITEMS = {
   ],
   superAdmin: [
     {
-      name: "Messages",
-      icon: MessageSquare,
-      href: "/dashboard/messages",
+      name: "Dashboard",
+      icon: Home,
+      href: "/dashboard/super-admin-dashboard",
+    },
+    {
+      name: "All Tickets",
+      icon: Ticket,
+      href: "/dashboard/super-admin-all-tickets",
+    },
+    {
+      name: "Saved Replies",
+      icon: Bookmark,
+      href: "/dashboard/saved-replies",
+    },
+    {
+      name: "Knowledge Base",
+      icon: BookOpen,
+      href: "/dashboard/super-admin-knowledge-base",
+    },
+    {
+      name: "User Management",
+      icon: User,
+      href: "/dashboard/user-management",
+    },
+    {
+      name: "Integrations",
+      icon: Database,
+      href: "/dashboard/super-admin-integrations",
+    },
+    {
+      name: "Reports & Analytics",
+      icon: Home,
+      href: "/dashboard/reports-analytics",
     },
   ],
 };
 
-export default function Sidebar({ role = "support" }) {
+export default function Sidebar({ role = "superAdmin" }) {
   const pathname = usePathname();
 
   return (
