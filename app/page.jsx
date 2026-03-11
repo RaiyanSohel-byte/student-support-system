@@ -11,12 +11,30 @@ import eyeOnIcon from "../public/icons/eyeOn.png";
 import { Montserrat } from "next/font/google";
 import EyeOnIcon from "@/app/components/icons/EyeOnIcon";
 import Link from "next/link";
+import { useRole } from "@/contexts/RoleContext";
+import { useRouter } from "next/navigation";
+
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
 });
 const Login = () => {
   const [showPass, setShowPass] = useState(false);
+  const { setRole } = useRole();
+  const router = useRouter();
+  const handleLogin = (role) => {
+    setRole(role);
+
+    if (role === "superAdmin") {
+      router.push("/dashboard/super-admin-dashboard");
+    } else if (role === "admin") {
+      router.push("/dashboard/admin-dashboard");
+    } else if (role === "support") {
+      router.push("/dashboard/ticket-handling");
+    } else if (role === "student") {
+      router.push("/dashboard/student-dashboard");
+    }
+  };
   return (
     <section className="min-h-screen flex justify-center items-center">
       <div className="space-y-8 py-4 lg:py-0">
@@ -112,6 +130,41 @@ const Login = () => {
           © {new Date().getFullYear()} University Support System. All rights
           reserved.
         </p>
+
+        <div>
+          <p className="text-center text-blue-600 font-bold text-2xl mb-4">
+            Login As:
+          </p>
+          <div className="flex justify-between items-center">
+            <button
+              onClick={() => handleLogin("superAdmin")}
+              className="cursor-pointer text-blue-600 font-semibold"
+            >
+              Super Admin
+            </button>
+
+            <button
+              onClick={() => handleLogin("admin")}
+              className="cursor-pointer text-blue-600 font-semibold"
+            >
+              Admin
+            </button>
+
+            <button
+              onClick={() => handleLogin("support")}
+              className="cursor-pointer text-blue-600 font-semibold"
+            >
+              Support
+            </button>
+
+            <button
+              onClick={() => handleLogin("student")}
+              className="cursor-pointer text-blue-600 font-semibold"
+            >
+              Student
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

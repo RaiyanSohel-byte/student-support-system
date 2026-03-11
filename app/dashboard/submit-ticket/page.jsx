@@ -22,7 +22,7 @@ const SubmitTicketPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("academic");
 
   return (
-    <div className="p-4 md:p-8">
+    <div className="p-4 md:p-8 max-w-5xl mx-auto">
       {/* Main Container Card */}
       <div className="bg-white rounded-[32px] border border-slate-100 shadow-sm p-8 md:p-12">
         {/* Header */}
@@ -51,7 +51,7 @@ const SubmitTicketPage = () => {
                     type="button"
                     onClick={() => setSelectedCategory(cat.id)}
                     className={`
-                      flex flex-col items-center justify-center p-6 rounded-2xl border-2 transition-all duration-200 gap-3
+                      flex flex-col items-center justify-center p-2 rounded-2xl border-2 transition-all duration-200 gap-3
                       ${
                         isActive ?
                           "border-[#4db8d8] bg-[#f0f9fb] text-[#4db8d8] shadow-md shadow-sky-50"

@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import FloatingChatButton from "./components/shared/FloatingChatButton";
+import { RoleProvider } from "@/contexts/RoleContext";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({
@@ -16,8 +17,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
-        {children}
-        <FloatingChatButton />
+        <RoleProvider>
+          {children}
+          <FloatingChatButton />
+        </RoleProvider>
       </body>
     </html>
   );

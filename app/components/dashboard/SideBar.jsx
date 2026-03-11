@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import logo from "../../../public/logo.png";
 import Image from "next/image";
+import { useRole } from "@/contexts/RoleContext";
 const NAV_ITEMS = {
   student: [
     {
@@ -122,9 +123,9 @@ const NAV_ITEMS = {
   ],
 };
 
-export default function Sidebar({ role = "superAdmin" }) {
+export default function Sidebar() {
   const pathname = usePathname();
-
+  const { role } = useRole();
   return (
     <div className="flex flex-col h-full py-6">
       {/* Brand Logo */}
