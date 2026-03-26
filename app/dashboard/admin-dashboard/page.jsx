@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import withAuth from "@/app/hocs/withAuth";
 import {
   Ticket,
   Clock,
@@ -250,4 +252,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default withAuth(AdminDashboard, ["admin"]);

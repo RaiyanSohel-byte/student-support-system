@@ -1,8 +1,11 @@
+"use client";
+import { useRole } from "@/contexts/RoleContext";
 import { Bell, LogOut, Menu, User } from "lucide-react";
 import Link from "next/link";
 import { IoIosNotificationsOutline } from "react-icons/io";
 export default function TopBar({ onMenuClick }) {
   // Add prop here
+  const { role } = useRole();
   return (
     <header className="h-20 bg-white border-b border-slate-100 px-6 lg:px-8 flex items-center justify-between sticky top-0 z-10">
       <div className="flex items-center gap-4">
@@ -23,8 +26,25 @@ export default function TopBar({ onMenuClick }) {
         {/* Profile Info */}
         <div className="flex items-center gap-3 pr-6 border-r border-slate-100">
           <div className="relative text-right hidden sm:block">
-            <p className="text-sm font-bold text-slate-800">John Student</p>
-            <p className="text-xs text-slate-400">Student</p>
+            <p className="text-sm font-bold text-slate-800">
+              John{" "}
+              {role === "superAdmin" ?
+                "Super Admin"
+              : role === "admin" ?
+                "Admin"
+              : role === "support" ?
+                "Support"
+              : "Student"}
+            </p>
+            <p className="text-xs text-slate-400">
+              {role === "superAdmin" ?
+                "Super Admin"
+              : role === "admin" ?
+                "Admin"
+              : role === "support" ?
+                "Support"
+              : "Student"}
+            </p>
           </div>
         </div>
         <div className="w-10 h-10 bg-sky-100 rounded-full flex items-center justify-center text-sky-600">

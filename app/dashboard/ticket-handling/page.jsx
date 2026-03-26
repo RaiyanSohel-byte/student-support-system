@@ -1,4 +1,5 @@
 "use client";
+import withAuth from "@/app/hocs/withAuth";
 import React, { useState } from "react";
 import {
   Search,
@@ -79,7 +80,7 @@ const AcademySupportPortal = () => {
       {/* MAIN CONTENT AREA */}
       <main className="flex-1 flex flex-col min-w-0 h-screen overflow-y-auto">
         <div className="px-10 pb-10">
-          {currentView === "list" ?
+          {currentView === "list" ? (
             /* --- VIEW A: TICKET DASHBOARD --- */
             <div className="animate-in fade-in slide-in-from-bottom-2 duration-500">
               <div className="bg-gray-50/50 rounded-[32px] p-10 mb-8 border border-gray-100">
@@ -173,7 +174,8 @@ const AcademySupportPortal = () => {
                 </div>
               </div>
             </div>
-          : /* --- VIEW B: TICKET DETAIL --- */
+          ) : (
+            /* --- VIEW B: TICKET DETAIL --- */
             <div className="animate-in slide-in-from-right-4 duration-500 p-8">
               <button
                 onClick={() => setCurrentView("list")}
@@ -311,11 +313,11 @@ const AcademySupportPortal = () => {
                 </div>
               </div>
             </div>
-          }
+          )}
         </div>
       </main>
     </div>
   );
 };
 
-export default AcademySupportPortal;
+export default withAuth(AcademySupportPortal, ["support"]);

@@ -1,3 +1,5 @@
+"use client";
+import withAuth from "@/app/hocs/withAuth";
 import { BookOpen, GraduationCap, Activity, Ticket } from "lucide-react";
 
 import clock from "../../../public/icons/clock.png";
@@ -6,7 +8,7 @@ import progress from "../../../public/icons/progress.png";
 import Image from "next/image";
 import StatCard from "@/app/components/dashboard/StatCard";
 import ScheduleCard from "@/app/components/dashboard/ScheduleCard";
-export default function StudentDashboardPage() {
+function StudentDashboardPage() {
   return (
     <div className="space-y-8 p-4 md:p-8">
       {/* Welcome Header */}
@@ -119,3 +121,4 @@ export default function StudentDashboardPage() {
     </div>
   );
 }
+export default withAuth(StudentDashboardPage, ["student"]);

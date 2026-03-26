@@ -1,3 +1,5 @@
+"use client";
+import withAuth from "@/app/hocs/withAuth";
 import React from "react";
 import {
   Ticket,
@@ -226,4 +228,4 @@ const ProgressBar = ({ label, value, valueColor, fill }) => (
   </div>
 );
 
-export default SuperAdminDashboard;
+export default withAuth(SuperAdminDashboard, ["super-admin"]);
